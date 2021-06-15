@@ -1,0 +1,19 @@
+<h1>Twitter Feed</h1>
+<button><a href="/logout/">Logout</a></button>
+
+<p><button><a href="/">Home</a></button>
+  <button><a href="/tweets/">Tweet</a></button>
+  <button><a href="/profile/{{ user.id }}/">Profile</a></button>
+  <button><a href="/notification/{{ request.user.id }}/">Notifications</a></button>
+
+  {% for t in tweets %}
+
+
+<p> <a href="/profile/{{ t.user.id }}/">{{ t.user }}</a>-<a href="/tweet/{{ t.id }}/">{{ t.tweet }}</a>
+
+  {% endfor %}
+
+  {% for t in my %}
+
+<p> <a href="/profile/{{ t.user.id }}/">{{ t.user }}</a>-<a href="/tweet/{{ t.id }}/">{{ t.tweet }}</a>
+  {% endfor %}

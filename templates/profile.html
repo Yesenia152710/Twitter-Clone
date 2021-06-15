@@ -1,0 +1,24 @@
+<h1>{{ request.user.first_name }} Profile</h1>
+
+<p><button><a href="/">Home</a></button>
+  <button><a href="/tweets/">Tweet</a></button>
+  <button><a href="/profile/{{ user.id }}/">Profile</a></button>
+  <button><a href="/notification/">Notifications</a></button>
+
+
+  {% if who.id != request.user %}
+  {% if is_following %}
+  <button><a href="/follow/{{ who.id }}/">Unfollow</a></button>
+  {% else %}
+  <button><a href="/follow/{{ who.id }}/">Follow</a></button>
+  {% endif %}
+  {% endif %}
+
+<p>Tweets:{{tweet.count}}</p>
+<p>Following:{{following.count}}</p>
+
+
+
+{% for t in tweet%}
+<p>{{ t.tweet }}
+  {% endfor %}

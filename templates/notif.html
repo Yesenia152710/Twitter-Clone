@@ -1,0 +1,9 @@
+<p><button><a href="/">Home</a></button>
+  <button><a href="/tweets/">Tweet</a></button>
+  <button><a href="/profile/{{ user.id }}/">Profile</a></button>
+  <button><a href="/notification/{{ request.user.id }}/">Notifications</a></button>
+
+
+  {% for n in notifs %}
+<p>{{ n.message }}
+  {% endfor %}

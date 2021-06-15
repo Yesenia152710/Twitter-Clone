@@ -1,0 +1,11 @@
+<p><button><a href="/">Home</a></button>
+  <button><a href="/tweets/">Tweet</a></button>
+  <button><a href="/profile/{{ user.id }}/">Profile</a></button>
+  <button><a href="/notification/">Notifications</a></button>
+
+
+<form method='post'>
+  {% csrf_token %}
+  {{ form.as_p}}
+  <button type="submit">Post</button>
+</form>
